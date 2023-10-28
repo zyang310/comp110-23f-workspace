@@ -2,10 +2,6 @@
 
 __author__ = "730713735"
 
-def main() -> None:
-    """Main function to store other functions."""
-    pass
-
 
 def invert(given_dict: dict[str,str]) -> dict[str,str]:
     """inverts the key-value pair in the dictionary."""
@@ -20,7 +16,3 @@ def invert(given_dict: dict[str,str]) -> dict[str,str]:
         dictionary[list[counter]] = i
         counter += 1
     return dictionary
-
-
-if __name__ == "__main__":
-    main()
