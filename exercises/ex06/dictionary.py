@@ -23,6 +23,8 @@ def invert(given_dict: dict[str, str]) -> dict[str, str]:
 def favorite_color(given_dict: dict[str, str]) -> str:
     """Returns the most popular color in given_dict."""
     frequency: dict[str, int] = {}
+    if given_dict == {}:
+        return {}
     for color in given_dict:
         if given_dict[color] not in frequency:
             frequency[given_dict[color]] = 1
@@ -56,29 +58,21 @@ def count(given_list: list[str]) -> dict[str, int]:
 
 def alphabetizer(given_list: list[str]) -> dict[str, list[str]]:
     """This functions returns a dictionary that sorts each value into a key-value pair with the key being the first letter."""
-    list2: list[str] = []
-    counter: int = 0
-    alphabetized_dict: dict[str, list[str]] = {}
-    for i in range(0, len(given_list)):
-        if given_list[i][0] not in list2:
-            list2.append(given_list[i][0].lower())
-    
-    for letter in list2:
-        alphabetized_dict[letter] = []
-
-    for letter in list2:
-        for word in given_list:
-            if given_list[counter][0].lower() == letter:
-                alphabetized_dict[letter].append(word)
-            counter += 1
-        counter = 0
-       
-    return alphabetized_dict
-
+    alphabetized_dictionary: dict[str, list[str]] = {}
+    for string in given_list:
+        if string.lower()[0] in alphabetized_dictionary:
+            alphabetized_dictionary[string.lower()[0]].append(string)
+        else:
+            alphabetized_dictionary[string.lower()[0]] = [string]
+    return alphabetized_dictionary
+  
 
 def update_attendance(given_log: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
     """This functions allows the user to update a attendence sheet when given the day and student name."""
+    if day == ' ' or student == ' ':
+        return given_log
     if day not in given_log:
         given_log[day] = []
-    given_log[day].append(student)
+    if student not in given_log[day]:
+        given_log[day].append(student)
     return given_log
