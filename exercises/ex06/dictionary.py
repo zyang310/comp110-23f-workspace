@@ -12,7 +12,7 @@ def invert(given_dict: dict[str, str]) -> dict[str, str]:
     counter: int = 0
     for i in given_dict:
         if given_dict[i] in list2:
-            raise ValueError("Same keys if inverted")
+            raise KeyError("Same keys if inverted")
         list2.append(given_dict[i])
     for i in given_dict:
         dictionary[list2[counter]] = i

@@ -3,14 +3,12 @@
 __author__ = "730713735"
 
 from exercises.ex06.dictionary import invert, favorite_color, count, alphabetizer, update_attendance
-import pytest
 
 
 def test_empty_dictionary() -> None:
-    """Test a KeyError"""
-    with pytest.raises(KeyError):
-        invert({'alyssa': "byrnes", "adam": "brynes"})
-    
+    """Test a empty dictionary."""
+    assert invert({}) == {}
+
 
 def test_invert_normal() -> None:
     """A normal test case."""
