@@ -21,7 +21,7 @@ class Pizza:
         # returns self
 
     def price(self) -> float:
-        """Meethod to compute prince of Pizza"""
+        """Method to compute prince of Pizza"""
         if self.size == "large":
             cost: float = 6.25
         else:
