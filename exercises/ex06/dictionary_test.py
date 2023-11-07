@@ -8,7 +8,7 @@ from exercises.ex06.dictionary import invert, favorite_color, count, alphabetize
 def test_empty_dictionary() -> None:
     """Test a empty dictionary."""
     assert invert({}) == {}
-
+    
 
 def test_invert_normal() -> None:
     """A normal test case."""

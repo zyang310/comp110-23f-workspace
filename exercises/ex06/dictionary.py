@@ -19,6 +19,7 @@ def invert(given_dict: dict[str, str]) -> dict[str, str]:
         counter += 1
     return dictionary
 
+print(invert({"a": "first", 'b': "second", "c": "third"}))
 
 def favorite_color(given_dict: dict[str, str]) -> str:
     """Returns the most popular color in given_dict."""
